@@ -1,0 +1,168 @@
+/* ============================================================
+   SpaceX Dashboard Override
+   极简学术主页：通透、克制、精密
+   加载于 global.css 之后，作为最终覆盖
+   ============================================================ */
+
+:root {
+    --sd-ink:        #111111;  /* 主标题色 */
+    --sd-text:       #333333;  /* 正文 */
+    --sd-muted:      #666666;  /* 辅助信息 */
+    --sd-hairline:   #EAEAEA;  /* 极细分隔线 */
+    --sd-accent:     #E82127;  /* Tesla Red */
+    --sd-accent-5:   rgba(232, 33, 39, 0.05);
+    --sd-accent-8:   rgba(232, 33, 39, 0.08);
+    --sd-bg:         #FFFFFF;
+    --sd-bg-soft:    #FAFAFA;
+    --sd-shadow:     0 10px 30px rgba(0, 0, 0, 0.08);
+    --sd-font:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ----------------------------------------------------------
+   1. Typography is King
+   ---------------------------------------------------------- */
+html, body {
+    font-family: var(--sd-font) !important;
+    line-height: 1.75 !important;
+    color: var(--sd-text) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background-color: var(--sd-bg) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--sd-ink) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em;
+}
+
+.text-profile-position,
+.text-profile-bio,
+.text-profile-position *,
+.text-profile-bio * {
+    color: var(--sd-text) !important;
+    font-weight: 400 !important;
+}
+
+small, .small, em, .text-muted {
+    color: var(--sd-muted) !important;
+}
+
+/* ----------------------------------------------------------
+   2. Clean Header
+   ---------------------------------------------------------- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid var(--sd-hairline) !important;
+    box-shadow: none !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: var(--sd-text) !important;
+    font-weight: 400 !important;
+    transition: color 0.15s ease, font-weight 0.15s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    color: var(--sd-ink) !important;
+    font-weight: 700 !important;
+}
+
+/* ----------------------------------------------------------
+   3. Remove Cards, Return to Content
+   ---------------------------------------------------------- */
+.card,
+.card.border-0.shadow-sm.bg-white,
+.shadow-sm {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+/* 利用留白替代边框：板块之间 80px 留白 */
+.container-lg > .row,
+main > .row,
+section,
+.media,
+.list-unstyled.mb-1 {
+    margin-bottom: 80px !important;
+}
+
+/* 最后一块不要额外 80px 底部空间 */
+.container-lg > .row:last-child,
+main > .row:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* ----------------------------------------------------------
+   4. Accent Color (Tesla Red)
+   ---------------------------------------------------------- */
+a, a:visited {
+    color: var(--sd-accent) !important;
+    text-decoration: none !important;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    padding: 0 0.15em;
+    margin: 0 -0.15em;
+    border-radius: 2px;
+}
+
+a:hover, a:focus {
+    color: var(--sd-accent) !important;
+    background-color: var(--sd-accent-5) !important;
+    text-decoration: none !important;
+}
+
+/* 导航栏里的链接：保持深灰、不被红色覆盖 */
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: var(--sd-text) !important;
+    background-color: transparent !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .navbar-brand:hover {
+    color: var(--sd-ink) !important;
+    background-color: transparent !important;
+}
+
+/* 按钮（Bootstrap btn）用 Tesla Red 主色 */
+.btn-primary,
+.btn-primary:visited {
+    background-color: var(--sd-accent) !important;
+    border-color: var(--sd-accent) !important;
+    color: #FFFFFF !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #C8191E !important;
+    border-color: #C8191E !important;
+    color: #FFFFFF !important;
+}
+
+/* ----------------------------------------------------------
+   5. Avatar (Portrait)
+   ---------------------------------------------------------- */
+.figure img,
+.portrait,
+img.figure-img,
+img.rounded-circle {
+    border-radius: 50% !important;
+    border: none !important;
+    box-shadow: var(--sd-shadow) !important;
+    background: transparent !important;
+}
